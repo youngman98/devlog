@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+개발블로그 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2023년 10월 10일
+1. 개발블로그 제작 프로젝트 시작
+2. react 프로젝트 생성
+3. 노션에 프로젝트 계획서 작성
+   제작이유: 
+   내가 커스터마이징 할 수 있는 개발블로그를 갖고싶다.
+   블로그는 게시판 형식의 웹 페이지이므로 블로그 제작에 성공한다면 게시판 제작 실력이 향상될 것 같다고 생각한다.
+   노션에 정리해둔 TIL 문서들을 내 개발블로그에 옮기고싶다.
 
-## Available Scripts
+   사용기술스택:
+   - HTML: 웹 페이지의 뼈대가 되는 기술
+   - CSS: 웹 페이지의 디자인을 담당하는 기술
+   - Javascript: 웹 페이지의 동적인 부분을 담당하는 기술(가능하다면 Typescript로 리팩토링 하고싶다.)
+   - React: 컴포넌트 기반 구현을 통해 재사용성이 높고 Virtual DOM을 사용해 하면 업데이트가 빠르기 때문, 또한 이용자가 많은 라이브러리이므로 활발한 지식공유와 커뮤니티 덕분에 모르거나 실수하는 부분을 찾기 용이하다.
+   - Redux-toolkit: state를 이용해 상호작용을 만들어내는 React에 반했는데 그걸 더 효율적으로 관리할 수 있게 해주기때문에 사용한다.
 
-In the project directory, you can run:
+   디자인:
+   - Figma: 아직 잘 사용하는 방법은 모르지만 유명 웹 사이트의 페이지를 캡쳐해 레이아웃을 구분하여 grid와 flex 레이아웃중 무엇이 더 적합할지 고려하고 퍼블리싱 전에 직접 설계 및 디자인을 하였다.
+   nike의 웹 사이트를 벤치마킹하고 디자인을 그대로 따라하는게 아닌 블로그라는 주제에 맞게 스스로 디자인을 고쳐보고 레이아웃을 최적화 해보았다.
 
-### `npm start`
+4. 기능구현
+  - 퍼블리싱 진행중
+  - flex와 grid를 두개 같이 쓰는 방식을 채택하려 했으나 flex의 wrap을 통해 화면이 축소된다면 요소가 줄바꿈을 하는게 반응형에 더 어울릴 것 같아서 flex를 레이아웃으로 채택함
+  참조)
+  https://webactually.com/2018/07/02/css-%EA%B7%B8%EB%A6%AC%EB%93%9C-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80/
+  - className을 작명하는데 중복되는 className을 작명한걸 모르고 css가 정상적으로 적용되지 않아 시간을 많이 허비했다. class 작명법인 OOCSS와 BEM을 사용해 작명했다.
+  OOCSS: 뼈대가 되는 속성을 담는 class와 개별적으로 추가 적용하는 속성을 담는 class 두가지로 나누는 방식
+  BEM: 특정 기능을 하는 컴포넌트를 블럭으로 묶어 기능명을 class로 작명하는 방식
+  - 깃허브에 이미지 파일을 저장하는 방법을 배웠다.
+  이미지 파일을 저장하고자 하는 리포지토리를 만들고 issues를 열어 이미지를 드래그앤드랍 하고 내부에 작성된 경로(주소값)을 복사해 readme파일에 넣는다. 이후 readme에 있는 이미지를 클릭해 주소를 복사해 이미지를 사용하고싶은 img태그 src안에 주소를 붙여넣는다.
+  https://ndb796.tistory.com/557
+  - 글자가 width를 넘겼을때 처리하는 방법을 배웠다.
+  text-overflow : ellipsis -> width를 넘긴 글자를 ...으로 표시하는 속성이다.
+  text-overflow를 쓰기 위해서는
+  white-space: nowrap -> 줄바꿈 방지
+  overflow: hidden -> 컨텐츠 영역만 보여줌
+  위 두가지 속성을 같이 써줘야한다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. 내일 할 것
+  - 퍼블리싱 완성(CSS적용)
