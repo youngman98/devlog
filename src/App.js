@@ -15,10 +15,10 @@ function App() {
         </div>
       </div>
 
+      <div className="White-space height-large"></div>
       <div className="Content-container">
 
       {/* white-space */}
-      {/* <div className="White-space height-large"></div> */}
 
       {/* sidebar */}
       <div className="Sidebar-container">

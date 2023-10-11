@@ -1,6 +1,12 @@
 /* 전체 CSS */
 @import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
 
+/* root */
+:root {
+  --main-color: #ffffff;
+  --sub-color: #F7F7F7;
+}
+
 .App {
   font-family: 'Orbit', sans-serif;
   font-size: 18px;
@@ -46,7 +52,7 @@ li {
 /* WHITE-SPACE CSS */
 .White-space {
   width: 100%;
-  background: blue;
+  background: var(--sub-color);
 }
 
 /* MainPage CONTENT */
@@ -66,7 +72,7 @@ li {
   width: 100%;
   top: 0;
   z-index: 10;
-  background: red;
+  background: var(--main-color);
 }
 
 .Header-container {
@@ -100,9 +106,11 @@ li {
 
 /* SIDEBAR */
 .Sidebar-container {
-  background: lightgray;
+  background: var(--main-color);
   padding: 0px;
-  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -164,7 +172,7 @@ li {
 .Main-container>.Search>.Search-icon {
   height: 37px;
   width: 37px;
-  background: url(./../public/icon/search-30.png) 50% 50% no-repeat;
+  background: url(https://user-images.githubusercontent.com/75000376/274183298-b1f30ea3-6328-43d5-a489-ef745ff3af93.png) 50% 50% no-repeat;
 }
 
 /* MAIN CONTENT */
