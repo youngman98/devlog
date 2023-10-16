@@ -106,3 +106,21 @@
    - PostPage 퍼블리싱, 리액트 라우터 연결
    - 다크모드 구현
    - DB에 작성한 글 저장하는 방법 찾아보기
+  
+2023년 10월 14일 ~ 16일
+1. PostPage 퍼블리싱, 리액트 라우터 연결 완성
+2. 라이브러리 및 Typescript, mdx 개발 환경 구축
+      - post 게시 및 보여주기를 git readme나 velog 글작성처럼 구현하기를 원해서 조사해본결과 react-markdown 라이브러리를 사용해 구현할 수 있다는걸 찾았다.
+        https://github.com/remarkjs/react-markdown
+        https://www.npmjs.com/package/react-markdown
+      - react-markdown에서 typescript를 지원한다는 소개를 보고 typescript가 궁금해졌다.
+        대규모 프로젝트나 일반 프로젝트에서 JS의 Dynamic typing으로 인한 오류를 예방해준다니 미리 연습해보면 좋을 것 같아 이번 프로젝트에 급하게 추가하려 한다.
+      - 개발 환경 구축에 긴 시간을 소모했다. Typescript를 기존 CRA 프로젝트에 추가하려고 하니 궁금증이 생겨 더 오래걸렸다. 신규 CRA 프로젝트에 Typescript를 설치하는것과 기존 CRA 프로젝트에 Typescript를 설치하는것에 어떤 차이가 있는지 궁금해 각각 테스트 폴더를 만들어 설치해보았고 기존 CRA 프로젝트에 설치하는 경우 js파일이 자동으로 tsx, ts로 변하지 않았으며 tsconfig.json도 없었다. 그 외에는 신규 CRA 프로젝트와 기존 CRA 프로젝트의 차이점이 없다는걸 배웠고 node_modules는 파일 용량이 큰데 어떻게 확인하지 싶었는데 이런경우 npm i를 터미널에 입력할때 node_modules가 package.json에 있는 라이브러리를 확인하고 자동으로 Typescript를 추가해줬다. 이제 정말 구현만 하면 끝난다.
+      - MERN에 대한 정보를 찾아봤다. (MongoDB, Express, React, Node.js) 주니어개발자인 내가 저걸 다 하는것보다는 React를 좀더 명확하게 잘하는게 좋겠다 생각되어 이번 프로젝트에서는 서버와 DB 없이 Post의 데이터를 프로젝트 폴더에 담아 구현하려고한다.(시간 여유가 된다면 서버와 DB도 해볼것)
+      - 추가로 RESTful API에 대해 알게되었다. 데이터 처리, 유저 검사 등을 서버에서 해주는데 그런 기능을 하는 함수를 API라고 부른다(간단히 말하면 기능을 구현해주는 간단버튼). API는 URL(엔드포인트라고 부른다)을 통해 method를 요청하는데 이걸 HTTP 요청(HTTP method)라고한다. 근데 API의 method인 GET, POST, PUT, UPDATE, DELETE를 각각 다른 HTTP에 요청하면 유지보수와 기능확장이 어렵다. 그래서 이걸 해결하려고 나온게 RESTful API다. 간단하게 원칙을 얘기하면 URL과 method가 일관성 있고, 유저가 서버역할을 담당하거나 DB를 직접 만지지못하게 하고, method는 각각 독립적으로 처리되어야하고, 서버가 보내는 자료들은 캐싱이 가능해야한다.(캐싱은 요즘 자동이라 신경 안써도 된다고한다.)
+        프론트엔드가 해야하는 URL 이름지을때 원칙은
+        1. 명사위주로 구성
+        2. 띄어쓰기는 - 사용
+        3. 파일 확장자 쓰지않기(.html같은거)
+        4. 하위 문서들을 뜻할때는 / 기호 사용하기
+        예시) facebook.com/bbc/photos
