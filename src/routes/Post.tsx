@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import Separator from './../components/Separator.js'
+import Separator from './../components/Separator'
+import ReactMarkdown from 'react-markdown'
+import Markdown from '../lib/Markdown'
 
 let Postcontainer = styled.div`
   display: flex;
@@ -34,7 +36,7 @@ let PostContent = styled.div`
   
 `
 
-function PostPage() {
+function Post() {
   return (
     <Postcontainer>
       <PostInfo>
@@ -49,10 +51,10 @@ function PostPage() {
         </PostTags>
       </PostInfo>
       <PostContent>
-        
+        <Markdown></Markdown>
       </PostContent>
     </Postcontainer>
   )
 }
 
-export default PostPage
+export default Post

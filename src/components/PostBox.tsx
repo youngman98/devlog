@@ -15,7 +15,7 @@ let Container = styled.div`
   box-sizing: border-box;
 `
 
-let PostBox = styled.div`
+let PostSection = styled.div`
   height: 100%;
   width: 100%;
   box-shadow: 0px 4px 10px 2px rgba(0,0,0,.3);
@@ -61,13 +61,12 @@ let PostDate = styled.p`
   padding-right: 15px;
 `
 
-function Post() {
-
+function PostBox() {
   return(
     <PostList>
     <Container>
-      <Link to="/PostPage">
-        <PostBox>
+      <Link to="/Post">
+        <PostSection>
           <Thumbnail>
             <ThumbnailImg/>
           </Thumbnail>
@@ -78,7 +77,7 @@ function Post() {
           <PostDate>
             2023. 10. 10
           </PostDate>
-        </PostBox>
+        </PostSection>
         </Link>
     </Container>
     </PostList>
@@ -86,4 +85,4 @@ function Post() {
   )
 }
 
-export default Post
+export default PostBox
